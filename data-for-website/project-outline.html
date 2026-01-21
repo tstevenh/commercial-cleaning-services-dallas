@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Outline: Commercial Cleaning Services of Dallas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+    :root {
+      --color-primary: #1a365d;
+      --color-accent: #c9a227;
+      --color-text: #1f2937;
+      --color-text-light: #6b7280;
+      --color-border: #e5e7eb;
+      --color-bg-light: #f9fafb;
+      --color-white: #ffffff;
+    }
+
+    @media print {
+      @page {
+        size: Letter;
+        margin: 0.5in;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg-light);
+    }
+
+    .container {
+      max-width: 8.5in;
+      margin: 0 auto;
+      background: var(--color-white);
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+
+    /* Header */
+    .header {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 2rem 2.5rem;
+      border-bottom: 4px solid var(--color-accent);
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .header .subtitle {
+      font-size: 11pt;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .header .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      font-size: 9pt;
+      opacity: 0.8;
+    }
+
+    .header .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Content */
+    .content {
+      padding: 2.5rem;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    .section-subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 10pt;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-value {
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    .card-desc {
+      font-size: 9pt;
+      color: var(--color-text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* Page List */
+    .page-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 1.5rem;
+      font-size: 9pt;
+    }
+
+    .page-list li {
+      padding-left: 0.5rem;
+    }
+
+    /* Location Tags */
+    .location-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    /* Non-Goals Box */
+    .non-goals {
+      background: #fef3c7;
+      border-left: 4px solid var(--color-accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .non-goals ul {
+      margin-bottom: 0;
+    }
+
+    .non-goals li {
+      font-size: 9pt;
+    }
+
+    /* Callout Box */
+    .callout {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2d4a7c 100%);
+      color: var(--color-white);
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .callout-title {
+      font-weight: 600;
+      font-size: 10pt;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .callout-title::before {
+      content: "→";
+      font-size: 14pt;
+    }
+
+    .callout ul {
+      margin-bottom: 0;
+      font-size: 9pt;
+      opacity: 0.95;
+    }
+
+    .callout li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Form Fields */
+    .form-fields {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      font-size: 9pt;
+    }
+
+    .form-field {
+      background: var(--color-bg-light);
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+
+    .form-field.req::before {
+      content: "* ";
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--color-border);
+      margin: 2rem 0;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-pill {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 8pt;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-bg-light);
+      padding: 1.25rem 2.5rem;
+      text-align: center;
+      font-size: 8pt;
+      color: var(--color-text-light);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Page number */
+    .page-num {
+      text-align: center;
+      font-size: 8pt;
+      color: var(--color-text-light);
+      margin-top: 2rem;
+    }
+
+    .small-note {
+      font-size: 8pt;
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    .ref-links {
+      font-size: 8pt;
+      color: var(--color-text-light);
+    }
+
+    .ref-links code {
+      background: var(--color-bg-light);
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      font-size: 8pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Commercial Cleaning Services of Dallas</h1>
+      <p class="subtitle">Project Outline (SEO-First Rank & Rent Site)</p>
+      <div class="meta">
+        <span>Domain: commercialcleaningservicesdallas.com</span>
+        <span>Date: January 20, 2026</span>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- PAGE 1: Project Summary -->
+      <section class="section">
+        <h2 class="section-title">Project Summary</h2>
+
+        <div class="grid-2">
+          <div>
+            <h3 class="section-subtitle">Goal</h3>
+            <p>Build a rank & rent website that ranks on Google for commercial cleaning keywords in Dallas, TX and captures organic traffic to generate leads via phone and contact form.</p>
+
+            <h3 class="section-subtitle">What We're Building</h3>
+            <p>A static, SEO-optimized website with:</p>
+            <ul>
+              <li>Homepage with service overview</li>
+              <li>29 individual service pages (one per service category)</li>
+              <li>8 location pages for Dallas suburbs</li>
+              <li>Services index and locations index</li>
+              <li>About page and contact form</li>
+            </ul>
+
+            <h3 class="section-subtitle">Reference Sites</h3>
+            <p class="small-note">Structure reference only (content will be commercial cleaning):</p>
+            <div class="ref-links">
+              commercialpaintersdallas.com<br>
+              commercialpaintingfortworth.com
+            </div>
+          </div>
+
+          <div>
+            <h3 class="section-subtitle">Tech Stack</h3>
+            <div class="tech-stack">
+              <span class="tech-pill">Astro</span>
+              <span class="tech-pill">Static HTML</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Vercel Deploy</span>
+              <span class="tech-pill">Formspree</span>
+            </div>
+
+            <h3 class="section-subtitle" style="margin-top: 1.5rem;">Lead Handling</h3>
+            <p>Contact form submits directly to email (provider-agnostic). Phone, email, and address are placeholders now, you'll provide actual values before launch.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 1: Scope Snapshot -->
+      <section class="section">
+        <h2 class="section-title">Scope Snapshot</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Total Pages</div>
+            <div class="card-value">43</div>
+            <div class="card-desc">5 core + 29 services + 8 locations + 1 utility</div>
+          </div>
+          <div class="card">
+            <div class="card-title">8 Location Pages</div>
+            <div class="card-value">Nearest Suburbs</div>
+            <div class="card-desc">Irving · Garland · Richardson · Mesquite<br>Carrollton · Farmers Branch · Addison · Plano</div>
+          </div>
+        </div>
+
+        <h3 class="section-subtitle">Pages Included</h3>
+        <ul class="page-list">
+          <li><strong>Homepage</strong>: Service overview, trust signals, FAQ</li>
+          <li><strong>Services Index</strong>: Complete service list organized by category</li>
+          <li><strong>Locations Index</strong>: Hub page for all service areas</li>
+          <li><strong>8 Location Pages</strong>: Each with rich, non-boilerplate content</li>
+          <li><strong>About Page</strong>: Mission, values, service areas, quality guarantee</li>
+          <li><strong>Contact Page</strong>: Form with fields below</li>
+        </ul>
+
+        <h3 class="section-subtitle">29 Service Pages</h3>
+        <div class="location-tags" style="margin-bottom: 0.5rem;">
+          <span class="tag">Commercial Cleaning</span>
+          <span class="tag">Janitorial Services</span>
+          <span class="tag">Office Cleaning</span>
+          <span class="tag">Warehouse Cleaning</span>
+          <span class="tag">Industrial Cleaning</span>
+        </div>
+        <div class="location-tags" style="margin-bottom: 0.5rem;">
+          <span class="tag">Medical Facility</span>
+          <span class="tag">Clinic Cleaning</span>
+          <span class="tag">Dental Office</span>
+          <span class="tag">Restaurant Cleaning</span>
+          <span class="tag">Commercial Kitchen</span>
+        </div>
+        <div class="location-tags" style="margin-bottom: 0.5rem;">
+          <span class="tag">Hood Cleaning</span>
+          <span class="tag">Retail Store</span>
+          <span class="tag">Car Dealership</span>
+          <span class="tag">Bank Cleaning</span>
+          <span class="tag">School Cleaning</span>
+        </div>
+        <div class="location-tags" style="margin-bottom: 0.5rem;">
+          <span class="tag">Daycare Cleaning</span>
+          <span class="tag">Gym Cleaning</span>
+          <span class="tag">Post-Construction</span>
+          <span class="tag">Move-Out Cleaning</span>
+        </div>
+        <div class="location-tags">
+          <span class="tag">Floor Cleaning</span>
+          <span class="tag">Carpet Cleaning</span>
+          <span class="tag">Strip & Wax Floors</span>
+          <span class="tag">Tile & Grout</span>
+          <span class="tag">Window Cleaning</span>
+          <span class="tag">Pressure Washing</span>
+          <span class="tag">Building Exterior</span>
+          <span class="tag">Disinfection</span>
+          <span class="tag">Deep Cleaning</span>
+          <span class="tag">Event Cleaning</span>
+          <span class="tag">Hotel Cleaning</span>
+          <span class="tag">Church Cleaning</span>
+          <span class="tag">Data Center</span>
+        </div>
+
+        <h3 class="section-subtitle">8 Location Pages (Nearest to Dallas)</h3>
+        <div class="location-tags">
+          <span class="tag">Irving</span>
+          <span class="tag">Garland</span>
+          <span class="tag">Richardson</span>
+          <span class="tag">Mesquite</span>
+          <span class="tag">Carrollton</span>
+          <span class="tag">Farmers Branch</span>
+          <span class="tag">Addison</span>
+          <span class="tag">Plano</span>
+        </div>
+
+        <h3 class="section-subtitle">Explicit Non-Goals</h3>
+        <div class="non-goals">
+          <p><strong>Not included in this project:</strong></p>
+          <ul>
+            <li>No call tracking or CRM</li>
+            <li>No fake testimonials anywhere on the site</li>
+            <li>No fake company history or claims (e.g., "serving since 1996")</li>
+            <li>No fake team members or stock photos of people</li>
+            <li>No Fort Worth:this site focuses on Dallas and nearest suburbs only</li>
+            <li>No blog content (can be added in future phase)</li>
+            <li>No icons in design:text-based layouts</li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <div class="callout-title">What We Need From You Later</div>
+          <ul>
+            <li>Actual phone number, email address, and physical business address</li>
+            <li>Email form backend choice (Formspree, GetForm, or similar provider)</li>
+            <li>Preferred brand colors and/or logo file (optional:we can proceed without)</li>
+            <li>Confirmation that the 8 location cities above are correct</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="page-break"></div>
+
+      <!-- PAGE 2: SEO Strategy -->
+      <section class="section">
+        <h2 class="section-title">SEO Strategy (High Level)</h2>
+
+        <div class="grid-2">
+          <div>
+            <h3 class="section-subtitle">Service Coverage</h3>
+            <p>One dedicated page per service category to match search intent. Coverage equals or exceeds reference sites, but for commercial cleaning instead of painting.</p>
+
+            <h3 class="section-subtitle">Content Approach</h3>
+            <p>Each page has deep, rich, non-boilerplate content. No duplicated content across location pages. Internal linking follows a hub-and-spoke model, homepage links to core services, service hubs link to sub-services.</p>
+
+            <h3 class="section-subtitle">Location Strategy</h3>
+            <p>8 location pages for the nearest Dallas suburbs. Each page is unique and locally focused, not templated filler content.</p>
+          </div>
+
+          <div>
+            <h3 class="section-subtitle">Performance Focus</h3>
+            <p>Site is built for speed and Core Web Vitals:</p>
+            <ul>
+              <li>Static HTML (no server-side rendering needed)</li>
+              <li>Lighthouse Performance score target: >90</li>
+              <li>Page load under 2 seconds on 4G</li>
+              <li>Optimized images (WebP, lazy loading)</li>
+              <li>Minimal JavaScript</li>
+            </ul>
+
+            <h3 class="section-subtitle">Schema Markup</h3>
+            <p>Structured data helps search engines understand the business:</p>
+            <ul>
+              <li>LocalBusiness / CleaningService schema on all pages</li>
+              <li>FAQPage schema on FAQ sections</li>
+              <li>BreadcrumbList for navigation hierarchy</li>
+              <li>Service catalog for offerings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-subtitle">Primary Target Users</h3>
+        <div class="grid-2">
+          <ul>
+            <li><strong>Office / Facilities Managers</strong>: Need recurring janitorial contracts</li>
+            <li><strong>Property Managers</strong>: Need turnover and post-construction cleaning</li>
+            <li><strong>Healthcare Administrators</strong>: Need medical-grade sanitization</li>
+          </ul>
+          <ul>
+            <li><strong>Restaurant Owners</strong>: Need kitchen hood and grease cleaning</li>
+            <li><strong>General Contractors</strong>: Need post-construction cleanup</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-subtitle">Contact Form Fields</h3>
+        <div class="form-fields">
+          <div class="form-field req">Name</div>
+          <div class="form-field req">Business Name</div>
+          <div class="form-field req">Email</div>
+          <div class="form-field req">Phone</div>
+          <div class="form-field req">Timeline</div>
+          <div class="form-field">Additional Information</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      This is a high-level project summary for alignment. Full requirements are documented in the PRD.
+    </footer>
+
+  </div>
+</body>
+</html>

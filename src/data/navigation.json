@@ -1,0 +1,48 @@
+{
+  "main": [
+    { "title": "Services", "href": "/services" },
+    { "title": "Locations", "href": "/locations" },
+    { "title": "About", "href": "/about" },
+    { "title": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "company": [
+      { "title": "About Us", "href": "/about" },
+      { "title": "Contact", "href": "/contact" }
+    ],
+    "legal": [
+      { "title": "Privacy Policy", "href": "/privacy" },
+      { "title": "Terms of Service", "href": "/terms" }
+    ]
+  },
+  "serviceCategories": {
+    "Recurring & Core Services": [
+      "janitorial-services",
+      "comprehensive-cleaning",
+      "office-building-cleaning"
+    ],
+    "Specialized Cleaning": [
+      "healthcare-environmental",
+      "disinfection-cleaning",
+      "specialty-cleaning"
+    ],
+    "Project-Based Services": [
+      "project-based-cleaning",
+      "construction-cleanup",
+      "event-center-cleaning"
+    ],
+    "Industry-Specific Services": [
+      "hospitality-cleaning",
+      "education-cleaning",
+      "religious-building-cleaning",
+      "government-building-cleaning",
+      "banks-financial-cleaning",
+      "car-dealership-cleaning"
+    ],
+    "Facility Types": [
+      "industrial-cleaning",
+      "recreation-shopping-cleaning",
+      "residential-floor-cleaning"
+    ]
+  }
+}

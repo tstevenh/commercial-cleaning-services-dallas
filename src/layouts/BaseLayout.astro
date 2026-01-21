@@ -1,0 +1,268 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Commercial Cleaning Dallas | Commercial Cleaning Services of Dallas",
+  description = "Professional commercial cleaning services in Dallas, TX. Licensed, bonded, and insured. Get a free quote today.",
+  image = "/logo.png",
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteData = (await import("../data/site.json")).default;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="commercial cleaning dallas, janitorial services dallas, office cleaning dallas" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteData.name} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="min-h-screen flex flex-col font-sans text-gray-900 antialiased">
+    <Header />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-serif: 'Instrument Serif', serif;
+    --color-black: #0a0a0a;
+    --color-cream: #f5f3ee;
+    --color-accent: #c8552d;
+    --color-accent-light: #e8784d;
+    --color-sage: #7d8471;
+    --color-charcoal: #1f1f1f;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-stone: #e7e5e4;
+    --color-cta: #ea580c;
+    --color-cta-hover: #dc2626;
+    
+    /* Mappings for legacy compatibility */
+    --color-primary: var(--color-black);
+    --color-primary-dark: var(--color-charcoal);
+    --color-secondary: var(--color-accent);
+    --color-bg-light: var(--color-cream);
+    --color-border: var(--color-black);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-display);
+    background-color: var(--color-cream);
+    color: var(--color-black);
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-black);
+  }
+
+  h1 { font-size: clamp(1.875rem, 4vw, 3rem); }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+  .serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  p {
+    line-height: 1.7;
+    color: var(--color-charcoal);
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-cta);
+    color: white;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-cta-hover);
+    color: white;
+  }
+
+  .btn-secondary {
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+    color: white;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Custom Button Styles (Site-wide) */
+  .btn-primary-custom {
+    background: var(--color-black);
+    color: var(--color-cream);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary-custom:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+    color: var(--color-cream);
+    text-decoration: none;
+  }
+
+  .btn-secondary-custom {
+    background: transparent;
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--color-black);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-secondary-custom:hover {
+    background: var(--color-black);
+    color: var(--color-cream);
+    text-decoration: none;
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  /* Section spacing */
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+</style>

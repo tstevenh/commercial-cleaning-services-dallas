@@ -1,0 +1,34 @@
+{
+  "name": "Commercial Cleaning Services of Dallas",
+  "domain": "commercialcleaningservicesdallas.com",
+  "url": "https://commercialcleaningservicesdallas.com",
+  "description": "Professional commercial cleaning services in Dallas, TX. Licensed, bonded, and insured. Get a free quote today.",
+  "phone": "(214) 555-5555",
+  "email": "info@commercialcleaningservicesdallas.com",
+  "address": {
+    "street": "123 Main St.",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201"
+  },
+  "serviceAreas": [
+    "Dallas",
+    "Highland Park",
+    "University Park",
+    "Farmers Branch",
+    "Irving",
+    "Garland",
+    "Richardson",
+    "Mesquite",
+    "Carrollton",
+    "Addison",
+    "Plano",
+    "The Colony",
+    "Frisco"
+  ],
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "linkedin": ""
+  }
+}

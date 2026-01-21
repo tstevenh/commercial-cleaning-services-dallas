@@ -1,0 +1,107 @@
+---
+import services from "../data/services.json";
+import locations from "../data/locations.json";
+import siteData from "../data/site.json";
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+  return currentPath.startsWith(href);
+}
+
+// Top 6-8 services (prioritize P0 first)
+const topServices = services.slice(0, 8);
+// Top locations with Dallas first
+const topLocations = [locations[0], ...locations.slice(1, 8)];
+---
+
+<!-- Services Dropdown -->
+<div class="group relative">
+  <button
+    class="font-medium hover:text-gray-600 transition-colors flex items-center gap-1"
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    Services
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+    <div class="bg-[#f5f3ee] border-2 border-black rounded-lg shadow-lg py-2 min-w-64 max-h-96 overflow-y-auto">
+      {topServices.map(service => (
+        <a
+          href={`/services/${service.slug}`}
+          class="block px-4 py-2 text-sm hover:bg-black !hover:text-white no-underline whitespace-nowrap"
+        >
+          {service.title}
+        </a>
+      ))}
+      <a
+        href="/services"
+        class="block px-4 py-2 text-sm font-semibold text-accent hover:bg-black !hover:text-white no-underline border-t-2 border-black"
+      >
+        View All Services
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Locations Dropdown -->
+<div class="group relative">
+  <button
+    class="font-medium hover:text-gray-600 transition-colors flex items-center gap-1"
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    Locations
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+    <div class="bg-[#f5f3ee] border-2 border-black rounded-lg shadow-lg py-2 min-w-56 max-h-96 overflow-y-auto">
+      {topLocations.map(location => (
+        <a
+          href={`/locations/${location.slug}`}
+          class="block px-4 py-2 text-sm hover:bg-black !hover:text-white no-underline whitespace-nowrap"
+        >
+          {location.city}, TX
+        </a>
+      ))}
+      <a
+        href="/locations"
+        class="block px-4 py-2 text-sm font-semibold text-accent hover:bg-black !hover:text-white no-underline border-t-2 border-black"
+      >
+        View All Locations
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<a
+  href="/about"
+  class:list={[
+    "font-medium hover:text-gray-600 transition-colors flex items-center gap-1 no-underline",
+    { "text-accent": isActive("/about") }
+  ]}
+>
+  About
+</a>
+
+<!-- Contact -->
+<a
+  href="/contact"
+  class:list={[
+    "font-medium hover:text-gray-600 transition-colors flex items-center gap-1 no-underline",
+    { "text-accent": isActive("/contact") }
+  ]}
+>
+  Contact
+</a>

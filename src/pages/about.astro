@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Schema from '../components/Schema.astro';
+
+const title = 'About Commercial Cleaning Services of Dallas | Professional Facility Maintenance';
+const description = 'Learn about Commercial Cleaning Services of Dallas. Licensed, bonded, and insured professional cleaning for Dallas area businesses. Quality guaranteed.';
+
+const siteData = (await import('../data/site.json')).default;
+
+const orgSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteData.name,
+  description: description,
+  url: "https://commercialcleaningservicesdallas.com/about",
+  telephone: siteData.phone,
+  email: siteData.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteData.address.street,
+    addressLocality: siteData.address.city,
+    addressRegion: siteData.address.state,
+    postalCode: siteData.address.zip,
+    addressCountry: "US"
+  },
+  areaServed: siteData.serviceAreas
+};
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '#' }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Schema Markup -->
+  <Schema type="organization" data={orgSchemaData} />
+  <Schema type="breadcrumb" data={{ breadcrumbs }} />
+
+  <style is:global>
+    /* Content styling matching service/location pages */
+    .about-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-black);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px double var(--color-accent);
+    }
+
+    .about-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-black);
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .about-content ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-content ul li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .about-content ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .about-content p {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .compact-value-card {
+      background: white;
+      border: 2px solid black;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .compact-value-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.4rem 0;
+      padding: 0;
+      border: none;
+    }
+
+    .compact-value-card p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+  </style>
+
+  <!-- Hero Section (no image, text only) -->
+  <section class="bg-cream relative py-12">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+
+      <p class="text-sm uppercase tracking-widest mb-4 text-gray-600">
+        Dallas, TX
+      </p>
+      <h1 class="mb-6">
+        <span class="block">About Commercial Cleaning</span>
+        <span class="block serif-italic text-accent">Services of Dallas</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-6 max-w-2xl">
+        Professional commercial cleaning services for Dallas area businesses. Licensed, bonded, and insured.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="btn-primary-custom">
+          Get Your Free Quote
+        </a>
+        <a href={`tel:${siteData.phone.replace(/\D/g, '')}`} class="btn-secondary-custom">
+          Call {siteData.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content - 2 Column Layout -->
+  <article class="bg-white border-t-2 border-black">
+    <div class="container py-12">
+      <div class="grid lg:grid-cols-2 gap-8 about-content">
+        <!-- Left Column -->
+        <div>
+          <!-- Mission & Values -->
+          <section class="mb-8">
+            <h2>Our Mission</h2>
+            <p>
+              Commercial Cleaning Services of Dallas provides professional commercial cleaning and facility maintenance services to businesses throughout Dallas, TX and surrounding suburbs. We focus on delivering reliable, thorough cleaning services that maintain clean, healthy, and professional environments for your employees, customers, and visitors.
+            </p>
+            <p>
+              We understand that every facility has unique cleaning requirements. Our approach emphasizes understanding your specific needs, developing customized cleaning programs, and delivering consistent service quality.
+            </p>
+
+            <h3>Our Values</h3>
+            <ul>
+              <li><strong>Reliability:</strong> We show up on schedule and complete cleaning services as specified.</li>
+              <li><strong>Attention to Detail:</strong> Thorough cleaning addresses visible and less-visible areas.</li>
+              <li><strong>Communication:</strong> Responsive communication supports effective service.</li>
+              <li><strong>Professional Standards:</strong> Trained cleaning staff, appropriate equipment, and proper cleaning methods.</li>
+            </ul>
+          </section>
+
+          <!-- What Sets Us Apart -->
+          <section class="mb-8">
+            <h2>What Sets Us Apart</h2>
+
+            <div class="compact-value-card">
+              <h3>Licensed, Bonded, and Insured</h3>
+              <p>
+                We carry general liability insurance and workers' compensation coverage. Bonding provides additional protection for your property.
+              </p>
+            </div>
+
+            <div class="compact-value-card">
+              <h3>Trained Cleaning Staff</h3>
+              <p>
+                Our cleaning staff receives training on proper cleaning methods, equipment use, and safety procedures. Background screening supports secure facility access.
+              </p>
+            </div>
+
+            <div class="compact-value-card">
+              <h3>Customized Cleaning Programs</h3>
+              <p>
+                We develop service programs based on your facility's specific needs. We assess your space, usage patterns, and cleaning requirements.
+              </p>
+            </div>
+
+            <div class="compact-value-card">
+              <h3>Flexible Scheduling</h3>
+              <p>
+                We provide cleaning services at times that work for your facility—including after-hours, early morning, and weekend service.
+              </p>
+            </div>
+
+            <div class="compact-value-card">
+              <h3>Quality Assurance</h3>
+              <p>
+                We conduct quality checks, respond to feedback promptly, and make service adjustments as needed.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Our Service Areas -->
+          <section class="mb-8">
+            <h2>Our Service Areas</h2>
+            <p>
+              Commercial Cleaning Services of Dallas serves businesses throughout Dallas and surrounding suburbs in Dallas, Collin, and Denton counties.
+            </p>
+
+            <div class="bg-cream border-2 border-black p-4 mb-4">
+              <h3>Dallas County</h3>
+              <ul class="text-sm">
+                <li>Dallas</li>
+                <li>Highland Park</li>
+                <li>University Park</li>
+                <li>Farmers Branch</li>
+                <li>Irving</li>
+                <li>Garland</li>
+                <li>Mesquite</li>
+                <li>Carrollton</li>
+                <li>Addison</li>
+              </ul>
+            </div>
+
+            <div class="bg-cream border-2 border-black p-4">
+              <h3>Collin & Denton Counties</h3>
+              <ul class="text-sm">
+                <li>Plano</li>
+                <li>Richardson</li>
+                <li>Frisco</li>
+                <li>The Colony</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3 pt-3 border-t border-gray-300">
+                Contact us if your Dallas-Fort Worth area location is not listed.
+              </p>
+            </div>
+          </section>
+
+          <!-- Quality Guarantee -->
+          <section class="mb-8">
+            <h2>Quality Guarantee</h2>
+            <p>
+              We stand behind our cleaning services. If you're not satisfied with any cleaning service, contact us within 24 hours. We'll address the issue promptly and re-clean areas that don't meet standards at no additional cost.
+            </p>
+            <p>
+              Our quality guarantee reflects our commitment to service excellence. We address issues directly, make necessary adjustments, and work to ensure your facility meets your cleanliness standards.
+            </p>
+
+            <div class="bg-accent/10 border-l-4 border-accent p-4 mt-4">
+              <h3>Service Quality Commitment</h3>
+              <ul class="text-sm">
+                <li>Thorough cleaning per service specifications</li>
+                <li>Reliable scheduling and attendance</li>
+                <li>Responsive communication</li>
+                <li>Professional, trained cleaning staff</li>
+                <li>Proper equipment and cleaning methods</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Final CTA Section - Consistent with other pages -->
+  <section class="py-20 md:py-28 bg-[#f5f3ee]">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+        Professional Commercial Cleaning Dallas Businesses Depend On
+      </h2>
+      <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+        Contact us today for a free quote. We're ready to help you maintain a clean, professional facility that reflects well on your business.
+      </p>
+      <a href="/contact" class="btn-primary-custom inline-flex items-center justify-center gap-3">
+        Get Your Free Quote
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

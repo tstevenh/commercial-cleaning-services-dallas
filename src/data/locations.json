@@ -1,0 +1,119 @@
+[
+  {
+    "slug": "dallas-tx",
+    "title": "Commercial Cleaning Dallas TX",
+    "city": "Dallas",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P0",
+    "nearby": ["highland-park-tx", "university-park-tx", "farmers-branch-tx", "irving-tx"]
+  },
+  {
+    "slug": "highland-park-tx",
+    "title": "Commercial Cleaning Highland Park TX",
+    "city": "Highland Park",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "university-park-tx"]
+  },
+  {
+    "slug": "university-park-tx",
+    "title": "Commercial Cleaning University Park TX",
+    "city": "University Park",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "highland-park-tx"]
+  },
+  {
+    "slug": "farmers-branch-tx",
+    "title": "Commercial Cleaning Farmers Branch TX",
+    "city": "Farmers Branch",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "carrollton-tx"]
+  },
+  {
+    "slug": "irving-tx",
+    "title": "Commercial Cleaning Irving TX",
+    "city": "Irving",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "carrollton-tx"]
+  },
+  {
+    "slug": "garland-tx",
+    "title": "Commercial Cleaning Garland TX",
+    "city": "Garland",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "richardson-tx", "mesquite-tx"]
+  },
+  {
+    "slug": "richardson-tx",
+    "title": "Commercial Cleaning Richardson TX",
+    "city": "Richardson",
+    "county": "Collin County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "garland-tx", "plano-tx"]
+  },
+  {
+    "slug": "mesquite-tx",
+    "title": "Commercial Cleaning Mesquite TX",
+    "city": "Mesquite",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "garland-tx"]
+  },
+  {
+    "slug": "carrollton-tx",
+    "title": "Commercial Cleaning Carrollton TX",
+    "city": "Carrollton",
+    "county": "Dallas North",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "farmers-branch-tx", "addison-tx"]
+  },
+  {
+    "slug": "addison-tx",
+    "title": "Commercial Cleaning Addison TX",
+    "city": "Addison",
+    "county": "Dallas County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "carrollton-tx"]
+  },
+  {
+    "slug": "plano-tx",
+    "title": "Commercial Cleaning Plano TX",
+    "city": "Plano",
+    "county": "Collin County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "richardson-tx", "frisco-tx"]
+  },
+  {
+    "slug": "the-colony-tx",
+    "title": "Commercial Cleaning The Colony TX",
+    "city": "The Colony",
+    "county": "Denton County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "frisco-tx"]
+  },
+  {
+    "slug": "frisco-tx",
+    "title": "Commercial Cleaning Frisco TX",
+    "city": "Frisco",
+    "county": "Collin County",
+    "state": "TX",
+    "priority": "P1",
+    "nearby": ["dallas-tx", "plano-tx", "the-colony-tx"]
+  }
+]

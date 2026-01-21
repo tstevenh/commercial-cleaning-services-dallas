@@ -1,0 +1,11 @@
+# robots.txt for Commercial Cleaning Services of Dallas
+# https://commercialcleaningservicesdallas.com
+
+User-agent: *
+Allow: /
+
+# Disallow thank you page from indexing
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://commercialcleaningservicesdallas.com/sitemap-index.xml

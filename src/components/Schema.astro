@@ -1,0 +1,105 @@
+---
+/**
+ * Schema Component
+ * Generates JSON-LD structured data for SEO
+ */
+interface Props {
+  type?: 'localBusiness' | 'service' | 'faqPage' | 'organization' | 'breadcrumb';
+  data?: Record<string, any>;
+}
+
+const { type, data } = Astro.props;
+
+const siteData = (await import("../data/site.json")) as any;
+
+// Default LocalBusiness/CleaningService schema (appears on all pages)
+const localBusinessSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": siteData.default.name,
+  "url": siteData.default.url,
+  "telephone": siteData.default.phone,
+  "email": siteData.default.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteData.default.address.street,
+    "addressLocality": siteData.default.address.city,
+    "addressRegion": siteData.default.address.state,
+    "postalCode": siteData.default.address.zip
+  },
+  "areaServed": siteData.default.serviceAreas,
+  "priceRange": "$$-$$$"
+};
+
+// Organization schema (homepage, about page)
+const organizationSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": siteData.default.name,
+  "url": siteData.default.url,
+  "logo": `${siteData.default.url}/logo.png`,
+  "description": siteData.default.description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteData.default.address.street,
+    "addressLocality": siteData.default.address.city,
+    "addressRegion": siteData.default.address.state,
+    "postalCode": siteData.default.address.zip
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": siteData.default.phone,
+    "contactType": "customer service"
+  },
+  "areaServed": siteData.default.serviceAreas
+};
+
+// Generate schema based on type
+let schema: Record<string, any> = localBusinessSchema;
+
+if (type === 'organization' && data) {
+  schema = { ...organizationSchema, ...data } as Record<string, any>;
+} else if (type === 'service' && data) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": data.serviceType,
+    "provider": {
+      "@type": "Organization",
+      "name": siteData.default.name,
+      "url": siteData.default.url
+    },
+    "areaServed": siteData.default.serviceAreas,
+    ...data
+  } as Record<string, any>;
+} else if (type === 'faqPage' && data?.faqs) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map((faq: any) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } as Record<string, any>;
+} else if (type === 'breadcrumb' && data?.breadcrumbs) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": data.breadcrumbs.map((crumb: any, index: number) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": crumb.url === '#' ? undefined : `${siteData.default.url}${crumb.url}`
+    })).filter((item: any) => item.item !== undefined)
+  } as Record<string, any>;
+} else if (data) {
+  schema = { ...localBusinessSchema, ...data } as Record<string, any>;
+}
+---
+
+<!-- Schema Markup -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />

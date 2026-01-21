@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "janitorial-services",
+    "title": "Janitorial Services Dallas",
+    "description": "Recurring Commercial Cleaning",
+    "keyword": "janitorial services dallas",
+    "priority": "P0",
+    "wordCount": "1800-2200",
+    "category": "Recurring & Core Services"
+  },
+  {
+    "slug": "comprehensive-cleaning",
+    "title": "Comprehensive Cleaning Dallas",
+    "description": "Complete Facility Services",
+    "keyword": "comprehensive cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Recurring & Core Services"
+  },
+  {
+    "slug": "office-building-cleaning",
+    "title": "Office Building Cleaning Dallas",
+    "description": "Corporate Cleaning Services",
+    "keyword": "office building cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1800-2200",
+    "category": "Recurring & Core Services"
+  },
+  {
+    "slug": "healthcare-environmental",
+    "title": "Healthcare Environmental Services Dallas",
+    "description": "Medical Facility Cleaning",
+    "keyword": "healthcare environmental services dallas",
+    "priority": "P1",
+    "wordCount": "1800-2200",
+    "category": "Specialized Cleaning"
+  },
+  {
+    "slug": "disinfection-cleaning",
+    "title": "Disinfection Cleaning Dallas",
+    "description": "Commercial Sanitization Services",
+    "keyword": "disinfection cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Specialized Cleaning"
+  },
+  {
+    "slug": "specialty-cleaning",
+    "title": "Specialty Cleaning Dallas",
+    "description": "Custom Commercial Cleaning",
+    "keyword": "specialty cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Specialized Cleaning"
+  },
+  {
+    "slug": "project-based-cleaning",
+    "title": "Project-Based Cleaning Dallas",
+    "description": "One-Time Cleaning Services",
+    "keyword": "project based cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Project-Based Services"
+  },
+  {
+    "slug": "construction-cleanup",
+    "title": "Construction Cleanup Dallas",
+    "description": "Post-Construction Cleaning",
+    "keyword": "construction cleanup dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Project-Based Services"
+  },
+  {
+    "slug": "event-center-cleaning",
+    "title": "Event Center Cleaning Dallas",
+    "description": "Venue & Convention Services",
+    "keyword": "event center cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Project-Based Services"
+  },
+  {
+    "slug": "hospitality-cleaning",
+    "title": "Hospitality Cleaning Dallas",
+    "description": "Hotel & Lodging Services",
+    "keyword": "hospitality cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "education-cleaning",
+    "title": "Education Cleaning Dallas",
+    "description": "School & University Cleaning",
+    "keyword": "education cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "religious-building-cleaning",
+    "title": "Religious Building Cleaning Dallas",
+    "description": "Church & Temple Cleaning",
+    "keyword": "religious building cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1200-1500",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "government-building-cleaning",
+    "title": "Government Building Cleaning Dallas",
+    "description": "Public Facility Services",
+    "keyword": "government building cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "banks-financial-cleaning",
+    "title": "Banks & Financial Institutions Cleaning Dallas",
+    "description": "Financial Facility Cleaning",
+    "keyword": "banks and financial institutions cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1200-1500",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "car-dealership-cleaning",
+    "title": "Car Dealership Cleaning Dallas",
+    "description": "Showroom & Service Center Cleaning",
+    "keyword": "car dealership cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1200-1500",
+    "category": "Industry-Specific Services"
+  },
+  {
+    "slug": "industrial-cleaning",
+    "title": "Industrial Cleaning Dallas",
+    "description": "Manufacturing Facility Services",
+    "keyword": "industrial cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Facility Types"
+  },
+  {
+    "slug": "recreation-shopping-cleaning",
+    "title": "Recreation & Shopping Cleaning Dallas",
+    "description": "Retail & Entertainment",
+    "keyword": "recreation and shopping cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1500-2000",
+    "category": "Facility Types"
+  },
+  {
+    "slug": "residential-floor-cleaning",
+    "title": "Residential Floor Cleaning Dallas",
+    "description": "Home Floor Care Services",
+    "keyword": "residential floor cleaning dallas",
+    "priority": "P1",
+    "wordCount": "1200-1500",
+    "category": "Facility Types"
+  }
+]

@@ -1,0 +1,101 @@
+---
+const services = (await import("../data/services.json")).default;
+const locations = (await import("../data/locations.json")).default;
+const navData = (await import("../data/navigation.json")).default;
+---
+
+<div id="mobile-menu" class="hidden lg:hidden border-t-2 border-black bg-cream">
+  <nav class="container py-4 space-y-4" aria-label="Mobile navigation">
+    <!-- Main Links -->
+    {navData.main.map(item => (
+      <a
+        href={item.href}
+        class="block py-2 text-lg font-semibold text-black no-underline hover:text-accent"
+      >
+        {item.title}
+      </a>
+    ))}
+
+    <!-- Services -->
+    <div class="pt-2 border-t-2 border-black">
+      <button
+        id="services-toggle"
+        class="flex items-center justify-between w-full py-2 text-lg font-semibold text-black"
+        aria-expanded="false"
+      >
+        Services
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div id="services-menu" class="hidden pl-4 mt-2 space-y-1">
+        {services.map((service: any) => (
+          <a
+            href={`/services/${service.slug}`}
+            class="block py-2 text-base text-gray-900 no-underline hover:text-accent"
+          >
+            {service.title}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Locations -->
+    <div class="pt-2 border-t-2 border-black">
+      <button
+        id="locations-toggle"
+        class="flex items-center justify-between w-full py-2 text-lg font-semibold text-black"
+        aria-expanded="false"
+      >
+        Locations
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div id="locations-menu" class="hidden pl-4 mt-2 space-y-1">
+        <a href="/locations" class="block py-2 text-base font-semibold text-black no-underline">
+          All Service Areas
+        </a>
+        {locations.map((location: any) => (
+          <a
+            href={`/locations/${location.slug}`}
+            class="block py-2 text-base text-gray-900 no-underline hover:text-accent"
+          >
+            {location.city}, TX
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Phone CTA -->
+    <div class="pt-4 border-t-2 border-black">
+      <a
+        href="/contact"
+        class="btn-primary-custom w-full text-center no-underline"
+      >
+        Request an Estimate
+      </a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  const servicesToggle = document.getElementById("services-toggle");
+  const servicesMenu = document.getElementById("services-menu");
+  const locationsToggle = document.getElementById("locations-toggle");
+  const locationsMenu = document.getElementById("locations-menu");
+
+  servicesToggle?.addEventListener("click", () => {
+    const isExpanded = servicesToggle.getAttribute("aria-expanded") === "true";
+    servicesToggle.setAttribute("aria-expanded", String(!isExpanded));
+    servicesMenu?.classList.toggle("hidden");
+  });
+
+  locationsToggle?.addEventListener("click", () => {
+    const isExpanded = locationsToggle.getAttribute("aria-expanded") === "true";
+    locationsToggle.setAttribute("aria-expanded", String(!isExpanded));
+    locationsMenu?.classList.toggle("hidden");
+  });
+</script>

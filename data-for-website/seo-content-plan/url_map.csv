@@ -1,0 +1,37 @@
+URL_Pattern,Page_Type,Target_Keyword,Canonical_Logic,Priority
+/,Homepage,commercial cleaning dallas,Self-referencing,P0
+/about/,About,about commercial cleaning dallas,Self-referencing,P1
+/contact/,Contact,contact commercial cleaning dallas,Self-referencing,P0
+/services/,Service Index,commercial cleaning services dallas list,Self-referencing,P1
+/locations/,Location Index,commercial cleaning dallas service areas,Self-referencing,P1
+/services/janitorial-services/,Service,janitorial services dallas,Self-referencing,P0
+/services/comprehensive-cleaning/,Service,comprehensive cleaning dallas,Self-referencing,P1
+/services/project-based-cleaning/,Service,project based cleaning dallas,Self-referencing,P1
+/services/disinfection-cleaning/,Service,disinfection cleaning dallas,Self-referencing,P1
+/services/specialty-cleaning/,Service,specialty cleaning dallas,Self-referencing,P1
+/services/construction-cleanup/,Service,construction cleanup dallas,Self-referencing,P1
+/services/healthcare-environmental/,Service,healthcare environmental services dallas,Self-referencing,P1
+/services/office-building-cleaning/,Service,office building cleaning dallas,Self-referencing,P1
+/services/industrial-cleaning/,Service,industrial cleaning dallas,Self-referencing,P1
+/services/hospitality-cleaning/,Service,hospitality cleaning dallas,Self-referencing,P1
+/services/education-cleaning/,Service,education cleaning dallas,Self-referencing,P1
+/services/religious-building-cleaning/,Service,religious building cleaning dallas,Self-referencing,P1
+/services/government-building-cleaning/,Service,government building cleaning dallas,Self-referencing,P1
+/services/event-center-cleaning/,Service,event center cleaning dallas,Self-referencing,P1
+/services/recreation-shopping-cleaning/,Service,recreation and shopping cleaning dallas,Self-referencing,P1
+/services/banks-financial-cleaning/,Service,banks and financial institutions cleaning dallas,Self-referencing,P1
+/services/residential-floor-cleaning/,Service,residential floor cleaning dallas,Self-referencing,P1
+/services/car-dealership-cleaning/,Service,car dealership cleaning dallas,Self-referencing,P1
+/locations/dallas-tx/,Location,commercial cleaning dallas tx,Self-referencing,P0
+/locations/highland-park-tx/,Location,commercial cleaning highland park tx,Self-referencing,P1
+/locations/university-park-tx/,Location,commercial cleaning university park tx,Self-referencing,P1
+/locations/farmers-branch-tx/,Location,commercial cleaning farmers branch tx,Self-referencing,P1
+/locations/irving-tx/,Location,commercial cleaning irving tx,Self-referencing,P1
+/locations/garland-tx/,Location,commercial cleaning garland tx,Self-referencing,P1
+/locations/richardson-tx/,Location,commercial cleaning richardson tx,Self-referencing,P1
+/locations/mesquite-tx/,Location,commercial cleaning mesquite tx,Self-referencing,P1
+/locations/carrollton-tx/,Location,commercial cleaning carrollton tx,Self-referencing,P1
+/locations/addison-tx/,Location,commercial cleaning addison tx,Self-referencing,P1
+/locations/plano-tx/,Location,commercial cleaning plano tx,Self-referencing,P1
+/locations/the-colony-tx/,Location,commercial cleaning the colony tx,Self-referencing,P1
+/locations/frisco-tx/,Location,commercial cleaning frisco tx,Self-referencing,P1
