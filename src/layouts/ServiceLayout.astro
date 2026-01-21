@@ -370,7 +370,7 @@ const getRelatedServices = () => {
   .service-content :global(strong) {
     font-weight: 700;
     color: var(--color-black);
-    background: linear-gradient(180deg, transparent 60%, rgba(200, 85, 45, 0.15) 60%);
+    background: linear-gradient(180deg, transparent 60%, var(--color-accent-alpha-15) 60%);
   }
 
   /* Highlight boxes for key points */
@@ -419,7 +419,7 @@ const getRelatedServices = () => {
     background: var(--color-cream);
     border: 2px solid var(--color-black);
     padding: 2rem;
-    box-shadow: 4px 4px 0 rgba(10, 10, 10, 0.1);
+    box-shadow: 4px 4px 0 var(--color-black-alpha-10);
   }
 
   .sidebar-title {
@@ -464,13 +464,13 @@ const getRelatedServices = () => {
   .form-textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(200, 85, 45, 0.1);
+    box-shadow: 0 0 0 3px var(--color-accent-alpha-10);
   }
 
   .form-hint {
     display: block;
     font-size: 0.75rem;
-    color: #666;
+    color: var(--color-text-light);
     margin-top: 0.25rem;
   }
 

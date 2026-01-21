@@ -152,7 +152,7 @@ export default function ContactForm({
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
 
@@ -167,7 +167,7 @@ export default function ContactForm({
           name="company"
           value={formData.company}
           onChange={handleInputChange}
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
 
@@ -183,7 +183,7 @@ export default function ContactForm({
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
 
@@ -199,7 +199,7 @@ export default function ContactForm({
           value={formData.phone}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
 
@@ -217,7 +217,7 @@ export default function ContactForm({
           onFocus={() => formData.projectType && setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
           required
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
           autoComplete="off"
         />
         {showSuggestions && filteredServices.length > 0 && (
@@ -226,7 +226,7 @@ export default function ContactForm({
               <li
                 key={index}
                 onClick={() => handleSuggestionClick(service)}
-                className="px-4 py-2 hover:bg-[#f5f3ee] cursor-pointer"
+                className="px-4 py-2 hover:bg-cream cursor-pointer"
               >
                 {service}
               </li>
@@ -245,7 +245,7 @@ export default function ContactForm({
           name="timeline"
           value={formData.timeline}
           onChange={handleInputChange}
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         >
           <option value="">Select a timeline</option>
           <option value="Immediate">Immediate</option>
@@ -266,7 +266,7 @@ export default function ContactForm({
           value={formData.details}
           onChange={handleInputChange}
           rows={4}
-          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-[#c8552d]"
+          className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
 
@@ -299,7 +299,7 @@ export default function ContactForm({
       <button
         type="submit"
         disabled={!isFormValid || isSubmitting}
-        className="w-full bg-[#c8552d] text-white px-8 py-4 border-2 border-black font-bold hover:bg-[#a84525] disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-accent text-white px-8 py-4 border-2 border-black font-bold hover:bg-accent-light disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
       >
         {isSubmitting ? 'Submitting...' : 'Get Free Quote'}
       </button>

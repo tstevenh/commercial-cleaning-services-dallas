@@ -63,13 +63,13 @@ const breadcrumbSchema = {
     display: flex;
     align-items: center;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--color-text-light);
   }
 
   .breadcrumb-item:not(:last-child)::after {
     content: "/";
     margin-left: 0.5rem;
-    color: #9ca3af;
+    color: var(--color-text-light);
   }
 
   .breadcrumb-link {
@@ -84,7 +84,7 @@ const breadcrumbSchema = {
   }
 
   .breadcrumb-current {
-    color: #6b7280;
+    color: var(--color-text-light);
     font-weight: 500;
   }
 </style>

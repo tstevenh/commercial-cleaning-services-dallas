@@ -5,7 +5,7 @@ import MobileMenu from "./MobileMenu.astro";
 const siteData = (await import("../data/site.json")).default;
 ---
 
-<header class="header sticky top-0 z-50 bg-[#f5f3ee] border-b-2 border-black">
+<header id="main-header" class="header sticky top-0 z-50 border-b-2 border-black transition-all duration-300" style="background-color: var(--color-cream);">
   <div class="container">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
@@ -65,7 +65,7 @@ const siteData = (await import("../data/site.json")).default;
 
 <style>
   .header {
-    transition: box-shadow 0.2s;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .header:focus-within {
@@ -94,4 +94,18 @@ const siteData = (await import("../data/site.json")).default;
       mobileMenu?.classList.remove("hidden");
     }
   });
+
+  // Add background on scroll
+  const header = document.getElementById("main-header");
+
+  const updateHeaderBackground = () => {
+    if (window.scrollY > 10) {
+      header?.classList.add("shadow-md");
+    } else {
+      header?.classList.remove("shadow-md");
+    }
+  };
+
+  window.addEventListener("scroll", updateHeaderBackground);
+  updateHeaderBackground(); // Run on load
 </script>

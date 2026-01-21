@@ -72,18 +72,24 @@ const siteData = (await import("../data/site.json")).default;
   :root {
     --font-display: 'Space Grotesk', sans-serif;
     --font-serif: 'Instrument Serif', serif;
-    --color-black: #0a0a0a;
-    --color-cream: #f5f3ee;
-    --color-accent: #c8552d;
-    --color-accent-light: #e8784d;
-    --color-sage: #7d8471;
-    --color-charcoal: #1f1f1f;
-    --color-text: #1f2937;
-    --color-text-light: #6b7280;
-    --color-stone: #e7e5e4;
-    --color-cta: #ea580c;
-    --color-cta-hover: #dc2626;
-    
+    --color-black: #0A2540;
+    --color-cream: #F9FAFB;
+    --color-accent: #1ABC9C;
+    --color-accent-light: #2DD4BF;
+    --color-sage: #7D9D9C;
+    --color-charcoal: #071930;
+    --color-text: #0A2540;
+    --color-text-light: #6B7280;
+    --color-stone: #E5E7EB;
+    --color-cta: #FF6B6B;
+    --color-cta-hover: #E85555;
+
+    /* Alpha variants for transparency */
+    --color-accent-alpha-15: rgba(26, 188, 156, 0.15);
+    --color-accent-alpha-10: rgba(26, 188, 156, 0.1);
+    --color-black-alpha-10: rgba(10, 37, 64, 0.1);
+    --color-black-alpha-20: rgba(10, 37, 64, 0.2);
+
     /* Mappings for legacy compatibility */
     --color-primary: var(--color-black);
     --color-primary-dark: var(--color-charcoal);
